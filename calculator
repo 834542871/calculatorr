@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+import sys
+
+if __name__ == '__main__':
+    try:
+        if len(sys.argv) != 2:
+           raise ValueError
+        
+        a = int(sys.argv[1]) - 3500.00
+        
+        if a <= 1500.00:
+            tax = a * 0.03
+        elif (a > 1500.00) and (a <= 4500.00):
+            tax = a * 0.1 -105.00
+        elif (a > 4500.00) and (a <= 9000.00):
+            tax = a * 0.2 -555.00
+        elif (a > 9000.00) and (a <= 35000.00):
+            tax = a * 0.25 - 1005.00
+        elif (a > 35000.00) and (a <= 55000.00):
+            tax = a * 0.3 -2755
+        elif (a > 55000.00) and (a <= 80000.00):
+            tax = a * 0.35 -5505.00
+        else:
+            tax == a * 0.45 -13505.00
+        print(format(tax,".2f"))
+    except ValueError:
+        print("input error")
+    
