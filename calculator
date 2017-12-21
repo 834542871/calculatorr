@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import sys
 
-class ParameterNumError
+class ParameterNumError:
     pass
-def get_tax
+def get_tax():
     employee_paytax = employee.copy()
     for key, value in employee_paytax.items():
         salary_paytax = value * (1 - 0.08 - 0.02 - 0.005 - 0.006) - 3500        
@@ -36,10 +36,7 @@ if __name__ == '__main__':
         employee_paytax = get_tax(employee)
         for key, value in employee_paytax.items():
             print(key + ':' + str(format(value, '.2f')))
-    except (ParameterNumError, valueError):
-        print('Parameter NumError')
+    except (ParameterNumError, ValueError):
+        print('Parameter Error')
 
-        print(format(tax,".2f"))
-    except ValueError:
-        print("input error")
-    
+       
