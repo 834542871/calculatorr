@@ -3,11 +3,13 @@ import sys
 
 class ParameterNumError:
     pass
-def get_tax():
+def get_tax(salry_paytax):
     employee_paytax = employee.copy()
     for key, value in employee_paytax.items():
-        salary_paytax = value * (1 - 0.08 - 0.02 - 0.005 - 0.006) - 3500        
-        if salary_paytax <= 1500.00:
+        salary_paytax = value * (1 - 0.08 - 0.02 - 0.005 - 0.06) - 3500        
+        if salary_paytax <= 0:
+            tax = 0.00      
+        elif salary_paytax <= 1500.00:
             tax = salary_paytax * 0.03
         elif (salary_paytax  > 1500.00) and (salary_paytax <= 4500.00):
             tax = salary_paytax * 0.1 -105.00
@@ -22,7 +24,7 @@ def get_tax():
         else:
             tax = salary_paytax * 0.45 -13505.00
         
-        employee_paytax[key] = value * (1 - 0.08 - 0.02 - 0.005 - 0.006) - tax
+        employee_paytax[key] = value * (1 - 0.08 - 0.02 - 0.005 - 0.06) - tax
     return employee_paytax
 
 if __name__ == '__main__':
